@@ -1,0 +1,33 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  // defines what 1rem is
+  font-size: 62.5%; // 1rem = 10px
+
+  @include respond (medium) {
+    font-size: 50%;
+  }
+}
+body {
+  box-sizing: border-box;
+  background-color: hsl(225, 22%, 96%);
+  height: 100vh;
+  background-attachment: fixed;
+  background-image: url(../../assets//img/backgroundimage.png);
+  // background-size: cover;
+  background-repeat: no-repeat;
+}
+input {
+  border-radius: 0;
+}
+// body:active .filter-box .filter-box__dropdown .filter-box__dropdown-list {
+//   background-color: red;
+//   transform: scaleY(0);
+//   width: 0;
+//   opacity: 0;
+// }

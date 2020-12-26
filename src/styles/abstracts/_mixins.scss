@@ -1,0 +1,111 @@
+@mixin absCenter {
+}
+
+@mixin sectionTop {
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+
+    &__text {
+      color: var(--color-headings);
+      font-size: 1.8rem;
+      &--dark {
+        margin-left: 1rem;
+        font-weight: 700;
+      }
+    }
+
+    &__view-more {
+      color: var(--color-primary-dark);
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        color: rgb(54, 187, 54);
+      }
+
+      &__text {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+@mixin section {
+  background-color: #fff;
+  grid-column: 1 / -1;
+  display: grid;
+  padding: 2rem 0;
+  overflow: hidden;
+}
+@mixin sectionContainer {
+  display: grid;
+  padding: 2rem;
+  width: 70%;
+  min-width: 70%;
+  justify-self: center;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(226, 223, 223);
+  overflow: hidden !important;
+
+  @include respond(large) {
+    width: 90%;
+  }
+  @include respond(smaller) {
+    width: 95%;
+  }
+  @include respond(smallest) {
+    width: 98%;
+    padding: 2rem 0.5rem;
+  }
+}
+
+// Media Queries
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == large {
+    @media (max-width: 90.625em) {
+      // 1450px
+      @content;
+    }
+  }
+  @if $breakpoint == medium {
+    @media (max-width: 71.875em) {
+      // 1150px
+      @content;
+    }
+  }
+  @if $breakpoint == small {
+    @media (max-width: 56.25em) {
+      // 900px
+      @content;
+    }
+  }
+  @if $breakpoint == smaller {
+    @media (max-width: 53.125em) {
+      // 750px
+      @content;
+    }
+  }
+  @if $breakpoint == smallest {
+    @media (max-width: 43.75em) {
+      // 700px
+      @content;
+    }
+  }
+  @if $breakpoint == tiny {
+    @media (max-width: 37.5em) {
+      // 600px
+      @content;
+    }
+  }
+  @if $breakpoint == tinier {
+    @media (max-width: 23em) {
+      // 360px
+      @content;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.bottom-stats {
+  @include section;
+
+  &__container {
+    @include sectionContainer;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    border: 0;
+  }
+  &__stats {
+    display: flex;
+    align-items: center;
+
+    &__figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    & i {
+      margin-right: 3rem;
+      font-size: 3.5rem;
+      color: var(--color-primary-dark);
+
+      @include respond(tiny) {
+        font-size: 2.5rem;
+        margin-right: 2.5rem;
+      }
+    }
+
+    &__number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      @include respond(tiny) {
+        font-size: 2rem;
+      }
+    }
+    &__title {
+      font-size: 1.5rem;
+      color: var(--color-primary);
+
+      @include respond(tiny) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

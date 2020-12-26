@@ -1,0 +1,7 @@
+.home-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 9rem 45rem auto 43rem auto auto auto;
+  
+}

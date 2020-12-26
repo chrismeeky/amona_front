@@ -1,0 +1,9 @@
+.nigerian-map {
+  & path {
+      cursor: pointer;
+    &:hover {
+      fill: var( --color-primary-dark) !important;
+    }
+  }
+}
+

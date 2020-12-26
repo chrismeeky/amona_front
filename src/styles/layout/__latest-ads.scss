@@ -1,0 +1,184 @@
+.latest-ads {
+  @include section;
+
+  &__container {
+    @include sectionContainer;
+    grid-template-rows: min-content 1fr min-content;
+  }
+  @include sectionTop;
+
+  &__latest-ads {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 1rem;
+
+    @include respond(medium) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include respond(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(tinier) {
+      grid-template-columns: 1fr;
+    }
+    &__latest-ad {
+      border: 1px solid rgb(226, 223, 223);
+      border-bottom: 1px solid rgb(226, 223, 223);
+      border-collapse: collapse;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      &:hover {
+        background-color: rgb(243, 240, 240);
+        border: 1px solid rgb(228, 222, 222);
+
+        .save span {
+          transform: scaleX(1);
+          width: 3rem;
+        }
+      }
+      &__picture {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1rem;
+        // border: 1px solid black;
+        & img {
+          height: 95%;
+          display: block;
+          width: 95%;
+        }
+      }
+
+      &__title {
+        color: var(--color-headings);
+        font-size: 1.2rem;
+        padding: 1rem;
+        text-align: center;
+        font-weight: 700;
+
+        @include respond(medium) {
+          font-size: 1.5rem;
+        }
+      }
+
+      &__details {
+        font-size: 1.2rem;
+        color: rgb(156, 154, 154);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 5%;
+        margin: auto;
+        margin-bottom: 1rem;
+
+        &__model--smallest {
+          display: none;
+
+          @include respond(smallest) {
+            display: block !important;
+          }
+        }
+        &__model {
+          @include respond(smallest) {
+            display: none;
+          }
+        }
+        @include respond(smallest) {
+          padding: 0 3%;
+        }
+        
+        & span:first-child {
+          margin-right: 4rem;
+        }
+        & i {
+          color: grey;
+        }
+
+        &__model {
+          color: var(--color-primary-dark);
+        }
+
+        &__price {
+          color: var(--color-headings);
+          font-size: 1.5rem;
+        }
+
+        &--down {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          justify-items: center;
+        }
+      }
+
+      &__badge {
+        position: absolute;
+        background-color: #cc3305;
+        transform: rotate(-40deg);
+        width: 70%;
+        min-width: 13rem;
+        min-height: 2rem;
+        height: 6%;
+        top: 1rem;
+        left: -3.5rem;
+        display: flex;
+        // justify-content: center;
+        padding-left: 20%;
+        align-items: center;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+    }
+  }
+  &__view-more {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &__btn {
+      font-size: 1.3rem;
+      border: 1px solid rgb(214, 211, 211);
+      padding: 1.4rem;
+      align-self: center;
+      margin-top: 1.5rem;
+      color: var(--color-headings);
+      border-radius: 0.3rem;
+      transition: all 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(214, 211, 211);
+        border: 1px solid rgb(165, 159, 159);
+      }
+
+      & i {
+        margin-right: 0.8rem;
+      }
+    }
+  }
+}
+.save {
+  display: inline-flex;
+  padding: 0.4rem;
+  border: 1px solid black;
+  border: 1px solid rgb(214, 211, 211);
+  border-radius: 0.3rem;
+  align-items: center;
+  color: black;
+  & i {
+    margin-right: 0.3rem;
+    color: black;
+  }
+
+  & span {
+    display: inline-block;
+    transition: all 0.2s;
+    width: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    overflow: hidden;
+  }
+}

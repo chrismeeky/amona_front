@@ -1,0 +1,57 @@
+.categories {
+  @include section;
+
+  &__container {
+    @include sectionContainer;
+    grid-template-rows: min-content 1fr;
+  }
+  @include sectionTop;
+  &__categories {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    // grid-template-rows: repeat(2, 17rem);
+
+    @include respond(smaller) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include respond(smallest) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &__category {
+      cursor: pointer;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      justify-items: center;
+      &:hover {
+        img {
+          transform: translateY(-0.5rem) scale(0.9);
+        }
+
+        h3 {
+          transform: scale(1.08);
+        }
+      }
+      &__picture {
+        display: flex;
+        img {
+          align-self: center;
+          justify-self: center;
+          transform: scale(0.9);
+          width: 95%;
+          transition: all 0.3s ease;
+        }
+      }
+
+      &__title {
+        font-size: 1.15rem;
+        text-align: center;
+        display: flex;
+        align-items: flex-start;
+        justify-self: center;
+        color: var(--color-headings);
+        font-weight: 700;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}

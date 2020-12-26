@@ -1,0 +1,140 @@
+.header,
+.header2 {
+  background-color: #fff;
+  grid-column: 1 / -1;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  position: relative;
+
+  &--sticky {
+    position: sticky;
+    top: 0;
+      animation: slideInDown 0.5s;
+  }
+  &--unfix {
+    top: 0;
+    animation: slideInUp 0.3s !important;
+  }
+
+  &__logo {
+    @include respond(tiny) {
+      justify-self: start;
+      margin-left: 2rem;
+    }
+    &__img {
+      height: 5rem;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    &__list {
+      display: flex;
+      margin-right: 2rem;
+      list-style: none;
+    }
+
+    &__item {
+      font-size: 1.4rem;
+
+      &:first-child {
+        margin-right: 2rem;
+      }
+    }
+
+    &__link:link,
+    &__link:visited {
+      color: var(--color-headings);
+      text-decoration: none;
+    }
+
+    @include respond(tiny) {
+      display: none;
+    }
+  }
+
+  &__nav__mobile {
+    display: none;
+    @include respond(tiny) {
+      display: block;
+    }
+    justify-self: end;
+    margin-right: 30px;
+
+    &__checkbox {
+      opacity: 0;
+    }
+    &__checkbox:checked ~ label button {
+      background-color: transparent;
+      &::before {
+        transform: rotate(135deg) translateY(0);
+      }
+      &::after {
+        transform: rotate(-135deg) translateY(3px);
+      }
+    }
+
+    &__checkbox:checked ~ ul {
+      height: 130px;
+    }
+
+    &__label {
+      cursor: pointer;
+      padding: 0;
+      & button:focus,
+      & button:active {
+        border: 0;
+        box-shadow: none;
+        outline: 0;
+      }
+      &:hover {
+        & button:before {
+          transform: translateY(-10px);
+        }
+        & button:after {
+          transform: translateY(7px);
+        }
+      }
+      & button,
+      & button:before,
+      & button:after {
+        height: 3px;
+        width: 35px;
+        background-color: var(--color-danger);
+        border: none;
+        transition: all 0.3s;
+      }
+
+      & button:before {
+        content: "";
+        display: block;
+        transform: translateY(-9px);
+      }
+
+      & button:after {
+        content: "";
+        display: block;
+        transform: translateY(6px);
+      }
+    }
+
+    &__list {
+      position: absolute;
+      background-color: white;
+      left: 0;
+      top: 72px;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+
+      transition: all 0.3s;
+      box-shadow: 10px 10px 10px rgba(#000, 0.5);
+    }
+  }
+}
+

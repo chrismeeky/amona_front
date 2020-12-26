@@ -1,0 +1,109 @@
+.footer {
+  grid-column: 1 / -1;
+  background-color: var(--color-primary-dark);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: min-content min-content;
+  justify-items: center;
+  padding: 4rem 8rem 3rem 8rem;
+
+  @include respond(smaller) {
+    padding: 4rem 2rem 3rem 2rem;
+  }
+  @include respond(tiny) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    &--social {
+      justify-self: start;
+      align-items: start;
+
+      @include respond(tiny) {
+        align-items: center;
+      }
+
+      &__items {
+        display: flex;
+        margin-top: 2rem;
+      }
+
+      &__item {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        color: white;
+        padding: 0.3rem 0.6rem;
+        background-color: red;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        & i {
+          transition: all 0.3s;
+        }
+
+        &:hover {
+          & i {
+            color: rgba(255, 255, 255, 0.623);
+          }
+        }
+        &--facebook {
+          background-color: #3b5998;
+
+          &:hover {
+            background-color: #3b58989f;
+          }
+        }
+        &--twitter {
+          background-color: #55acee;
+
+          &:hover {
+            background-color: #55aceea1;
+          }
+        }
+        &--instagram {
+          background-color: #cb2027;
+
+          &:hover {
+            background-color: #cb2026a1;
+          }
+        }
+      }
+    }
+    &__title {
+      color: #fff;
+      font-size: 1.45rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    &__list {
+      margin-top: 2rem;
+      list-style: none;
+    }
+
+    &__item {
+      margin-bottom: 0.8rem;
+    }
+
+    &__link:link,
+    &__link:visited {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &__copy-right {
+    grid-column: 1 /-1;
+    padding: 2rem;
+    color: white;
+  }
+}
