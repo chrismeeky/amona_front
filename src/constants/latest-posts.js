@@ -1,4 +1,4 @@
-import lexusr850 from "../assets/img/cars/latest/lexus.jpeg";
+import lexusr850 from "../assets/img/cars/latest/lexx.jpeg";
 import modelsports from "../assets/img/cars/latest/modelsports.jpeg";
 import nissan from "../assets/img/cars/latest/nissan.jpeg";
 import golf from "../assets/img/cars/latest/golf.jpeg";
@@ -66,7 +66,8 @@ const posts = [
     price: "800,000",
     location: "Ikorodu",
     model: "Toyota",
-    created_at: "14 hours ago",promotion: {
+    created_at: "14 hours ago",
+    promotion: {
       type: "Urgent",
     },
   },
@@ -251,4 +252,189 @@ const posts = [
   },
 ];
 
+const images = [
+  {
+    original: modelsports,
+    thumbnail: modelsports,
+  },
+  {
+    original: nissan,
+    thumbnail: nissan,
+  },
+  {
+    original: golf,
+    thumbnail: golf,
+  },
+  {
+    original: droplight,
+    thumbnail: droplight,
+  },
+  {
+    original: corolla2013,
+    thumbnail: corolla2013,
+  },
+  {
+    original: lexuses350,
+    thumbnail: lexuses350,
+  },
+  {
+    original: lexusis350,
+    thumbnail: lexusis350,
+  },
+  {
+    original: mercedesblack,
+    thumbnail: mercedesblack,
+  },
+  {
+    original: camrysport,
+    thumbnail: camrysport,
+  },
+];
+
+const recommendedPosts = [
+  {
+    picture: lexusr850,
+    title: "Gray 2006, Lexus RX330. Clean Direct Tokunbo",
+    rating: 4.3,
+    reviews: 10,
+    distance: 47,
+    price: "3,200,000",
+    location: "Lagos",
+    model: "Lexus",
+    created_at: "21 minutes ago",
+    promotion: {
+      type: "Urgent",
+    },
+  },
+
+  {
+    picture: modelsports,
+    title: "2010 Model Sport",
+    rating: 4.9,
+    reviews: 30,
+    distance: 10,
+    price: "3,200,000",
+    location: "Lagos",
+    model: "Toyota",
+    created_at: "8 hours ago",
+  },
+  {
+    picture: nissan,
+    title: "1993/Nissan Frontier Hilux ",
+    rating: 4.5,
+    reviews: 20,
+    distance: 47,
+    price: "1,000,000",
+    location: "Port Harcourt",
+    model: "Nissan",
+    created_at: "14 hours ago",
+  },
+  {
+    picture: golf,
+    title: "Urgent sale, car must go b4 xmas day ",
+    rating: 4.5,
+    reviews: 5,
+    distance: 14,
+    price: "800,000",
+    location: "Ikorodu",
+    model: "Toyota",
+    created_at: "14 hours ago",
+    promotion: {
+      type: "Urgent",
+    },
+  },
+  {
+    picture: droplight,
+    title: "Crystal Clean 2002 Toyota Camry Droplight(Pay And Drive)",
+    rating: 4.5,
+    reviews: 5,
+    distance: 20,
+    price: "770,000",
+    location: "Lagos",
+    model: "Toyota",
+    created_at: "1 day ago",
+  },
+  {
+    picture: corolla2013,
+    title: "Toyota Corolla 2013",
+    rating: 4.5,
+    reviews: 5,
+    distance: 20,
+    price: "3,700,000",
+    location: "Lagos",
+    model: "Toyota",
+    created_at: "1 day ago",
+    promotion: {
+      type: "Urgent",
+    },
+  },
+  {
+    picture: lexuses350,
+    title: "Registered 2008 Lexus ES350",
+    rating: 3,
+    reviews: 70,
+    distance: 36,
+    price: "3,700,000",
+    location: "Abuja",
+    model: "Lexus",
+    created_at: "2 days ago",
+  },
+  {
+    picture: lexusis350,
+    title: "Registered 2008 Lexus IS250",
+    rating: 3,
+    reviews: 5,
+    distance: 36,
+    price: "3,100,000",
+    location: "Yaba",
+    model: "Lexus",
+    created_at: "2 days ago",
+  },
+  {
+    picture: mercedesblack,
+    title: "Mercedes Benz E-Class 4MATIC MODEL 2008",
+    rating: 3.9,
+    reviews: 304.6,
+    distance: 40,
+    price: "2,100,000",
+    location: "Lagos",
+    model: "Mercedes-Benz",
+    created_at: "2 days ago",
+  },
+  {
+    picture: camrysport,
+    title: "Registered 2008 Toyota Camry Sport",
+    rating: 4.6,
+    reviews: 10,
+    distance: 40,
+    price: "1,850,000",
+    location: "Yaba",
+    model: "Toyota",
+    created_at: "2 days ago",
+  },
+  {
+    picture: olamicars,
+    title: "OLAMI CAR DELIVERY SERVICE",
+    rating: 5,
+    reviews: 25,
+    distance: 40,
+    price: "50,000",
+    location: "Abuja",
+    model: "Auto Insurance",
+    created_at: "2 days ago",
+  },
+  {
+    picture: honda,
+    title: "2012 Honda Accord, tokunbo",
+    rating: 4.0,
+    reviews: 11,
+    distance: 40,
+    price: "2,850,000",
+    location: "Ikeja",
+    model: "Toyota",
+    created_at: "2 days ago",
+  },
+  
+];
 export default posts;
+export { images, recommendedPosts };

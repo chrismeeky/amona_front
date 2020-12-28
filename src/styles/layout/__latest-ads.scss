@@ -15,7 +15,7 @@
     @include respond(medium) {
       grid-template-columns: repeat(3, 1fr);
     }
-    @include respond(medium) {
+    @include respond(small) {
       grid-template-columns: repeat(2, 1fr);
     }
     @include respond(tinier) {
@@ -73,22 +73,17 @@
         margin: auto;
         margin-bottom: 1rem;
 
-        &__model--smallest {
-          display: none;
+ 
+        &__model, &__time {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
 
-          @include respond(smallest) {
-            display: block !important;
-          }
-        }
-        &__model {
-          @include respond(smallest) {
-            display: none;
-          }
-        }
         @include respond(smallest) {
           padding: 0 3%;
         }
-        
+
         & span:first-child {
           margin-right: 4rem;
         }

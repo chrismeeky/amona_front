@@ -1,0 +1,26 @@
+.categories-list {
+  grid-column: 1/-1;
+  background-color: #fff;
+  display: grid;
+  justify-items: center;
+
+  @include respond(small) {
+ display: none;
+  }
+}
+
+.category-list {
+  width: 70%;
+  list-style: none;
+  text-align: center;
+  margin-top: 2rem;
+}
+.category__item {
+  font-size: 12px;
+  width: fit-content;
+  display: inline-block;
+  line-height: 1.5;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  margin-right: 5rem;
+}

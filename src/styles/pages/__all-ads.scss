@@ -1,0 +1,23 @@
+.all-ads {
+  &-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 9rem auto auto auto auto auto;
+
+    & .header {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid rgb(238, 233, 233);
+    }
+  }
+  &__search {
+    padding: 3rem 0;
+    grid-column: 1 / -1;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    // justify-items: center;
+
+
+  }
+}

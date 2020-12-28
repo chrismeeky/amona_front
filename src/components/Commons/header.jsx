@@ -16,7 +16,7 @@ const Header = (props) => {
   }, []);
   return (
     <header
-      className={`header  ${showHeader ? "header--sticky" : "header--unfix"}`}
+      className={`header  ${showHeader ? "header--sticky" : ""}`}
     >
       <figure className="header__logo">
         <a href="/">

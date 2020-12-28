@@ -1,5 +1,4 @@
-.header,
-.header2 {
+.header {
   background-color: #fff;
   grid-column: 1 / -1;
 
@@ -8,11 +7,12 @@
   justify-items: center;
   align-items: center;
   position: relative;
-
+  z-index: 1000000;
   &--sticky {
     position: sticky;
     top: 0;
-      animation: slideInDown 0.5s;
+    animation: slideInDown 0.5s;
+    
   }
   &--unfix {
     top: 0;
@@ -137,4 +137,3 @@
     }
   }
 }
-

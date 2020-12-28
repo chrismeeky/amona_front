@@ -6,7 +6,8 @@ import states from "../../constants/states";
 import posts from "../../constants/sponsored-post";
 import latestPost from "../../constants/latest-posts";
 import Header from "../Commons/header";
-
+import Footer from "../Commons/footer";
+import Post from "../Commons/post";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import categories from "../../constants/categories";
 const Home = () => {
@@ -22,24 +23,24 @@ const Home = () => {
           Find Car Dealers , Private Sellers & Service Providers Online - Great
           Offers, Fast Deals{" "}
         </h3>
-        <div className="wide-intro__search">
-          <div className="wide-intro__search__box">
-            <i className="fa fa-folder-open-o wide-intro__search__box__icon"></i>
+        <div className="search-box">
+          <div className="search-box__box">
+            <i className="fa fa-folder-open-o search-box__box__icon"></i>
             <input
               type="text"
-              className="wide-intro__search__box__input"
+              className="search-box__box__input"
               placeholder="What are you looking for"
             />
           </div>
-          <div className="wide-intro__search__box">
-            <i className="fa fa-map-marker wide-intro__search__box__icon"></i>
+          <div className="search-box__box">
+            <i className="fa fa-map-marker search-box__box__icon"></i>
             <input
               type="text"
-              className="wide-intro__search__box__input"
+              className="search-box__box__input"
               placeholder="Where ?"
             />
           </div>
-          <button className="wide-intro__search__box__button">
+          <button className="search-box__box__button">
             <i className="fa fa-search"></i>Search Now
           </button>
         </div>
@@ -138,15 +139,7 @@ const Home = () => {
                 </Slide>
               ))}
             </Slider>
-            {/* <div className="sponsored__steps">
-              {sponsoredPosts.map((post, index) => (
-                <Dot
-                  className="slide-dot"
-                  slide={index}
-                  disableActiveDots={true}
-                />
-              ))}
-            </div> */}
+          
           </CarouselProvider>
         </div>
       </section>
@@ -194,65 +187,7 @@ const Home = () => {
           </div>
           <div className="latest-ads__latest-ads">
             {latestPost.map((post, index) => (
-              <div className="latest-ads__latest-ads__latest-ad" key={index}>
-                {post.promotion && (
-                  <figure className="latest-ads__latest-ads__latest-ad__badge">
-                    {post.promotion.type}
-                  </figure>
-                )}
-                <figure className="latest-ads__latest-ads__latest-ad__picture">
-                  <img src={post.picture} alt={post.title} />
-                </figure>
-                <h3 className="latest-ads__latest-ads__latest-ad__title">
-                  {post.title}
-                </h3>
-                <div className="latest-ads__latest-ads__latest-ad__details">
-                  <span className="latest-ads__latest-ads__latest-ad__details__time">
-                    <i className="fa fa-clock"></i> {post.created_at}
-                  </span>
-                  <span className="latest-ads__latest-ads__latest-ad__details__model">
-                    <i className="fa fa-car"></i> {post.model}
-                  </span>
-                  <span className="latest-ads__latest-ads__latest-ad__details__model latest-ads__latest-ads__latest-ad__details__model--smallest">
-                    <i className="fa fa-car"></i>{" "}
-                    {post.model.length > 10
-                      ? post.model.slice(0, 9) + "..."
-                      : post.model}
-                  </span>
-                </div>
-                <div className="latest-ads__latest-ads__latest-ad__details">
-                  <span className="latest-ads__latest-ads__latest-ad__details__distance">
-                    {`${post.distance} km away`}
-                  </span>
-                  <span className="latest-ads__latest-ads__latest-ad__details__location">
-                    <i className="fa fa-map-marker"></i> {post.location}
-                  </span>
-                </div>
-                <div className="latest-ads__latest-ads__latest-ad__details">
-                  <span className="latest-ads__latest-ads__latest-ad__details__rating">
-                    <StarRatings
-                      rating={post.rating}
-                      starDimension="1.5rem"
-                      starSpacing=".1rem"
-                      starRatedColor="gold"
-                    />
-                  </span>
-                  <span className="latest-ads__latest-ads__latest-ad__details__reviews">
-                    {post.reviews} {post.reviews > 1 ? "reviews" : "review"}
-                  </span>
-                </div>
-                <div className="latest-ads__latest-ads__latest-ad__details latest-ads__latest-ads__latest-ad__details--down">
-                  <span className="latest-ads__latest-ads__latest-ad__details__distance">
-                    <div className="save">
-                      <i className="fa fa-heart"></i>
-                      <span>Save</span>
-                    </div>
-                  </span>
-                  <span className="latest-ads__latest-ads__latest-ad__details__price">
-                    {`₦${post.price}`}
-                  </span>
-                </div>
-              </div>
+              <Post index={index} post={post} />
             ))}
           </div>
           <div className="latest-ads__view-more">
@@ -287,98 +222,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <footer className="footer">
-        <div className="footer__nav">
-          <div className="footer__nav__title">About Us</div>
-          <ul className="footer__nav__list">
-            <li className="footer__nav__item">
-              <a href="/" className="footer__nav__link">
-                About Us
-              </a>
-            </li>
-            <li className="footer__nav__item">
-              <a href="/" className="footer__nav__link">
-                News & Blog
-              </a>
-            </li>
-            <li className="footer__nav__item">
-              <a href="/" className="footer__nav__link">
-                FAQ
-              </a>
-            </li>
-            <li className="footer__nav__item">
-              <a href="/" className="footer__nav__link">
-                Anti-Scam
-              </a>
-            </li>
-            <li className="footer__nav__item">
-              <a href="/" className="footer__nav__link">
-                Privacy
-              </a>
-            </li>
-            <li className="footer__nav__item">
-              <a href="/" className="footer__nav__link">
-                Disclaimer
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="footer__nav">
-          <div className="footer__nav__title">Contact & Sitemap</div>
-          <ul className="footer__nav__list">
-            <li className="footer__nav__item">
-              <a href="/" className="footer__nav__link">
-                Contact Us
-              </a>
-            </li>
-            <li className="footer__nav__item">
-              <a href="/" className="footer__nav__link">
-                Sitemap
-              </a>
-            </li>
-            <li className="footer__nav__item">
-              <a href="/" className="footer__nav__link">
-                Countries
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="footer__nav">
-          <div className="footer__nav__title">My Account</div>
-          <ul className="footer__nav__list">
-            <li className="footer__nav__item">
-              <a href="/" className="footer__nav__link">
-                Log In
-              </a>
-            </li>
-            <li className="footer__nav__item">
-              <a href="/" className="footer__nav__link">
-                Register
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="footer__nav footer__nav--social">
-          <div className="footer__nav__title">Follow us on</div>
-          <div className="footer__nav--social__items">
-            <figure className="footer__nav--social__item footer__nav--social__item--facebook">
-              <i class="fab fa-facebook-square"></i>
-            </figure>
-            <figure className="footer__nav--social__item footer__nav--social__item--twitter">
-              <i class="fab fa-twitter"></i>
-            </figure>
-            <figure className="footer__nav--social__item footer__nav--social__item--instagram">
-              <i class="fab fa-instagram"></i>
-            </figure>
-            <figure className="footer__nav--social__item footer__nav--social__item--instagram">
-              <i class="fab fa-instagram"></i>
-            </figure>
-          </div>
-        </div>
-        <div className="footer__copy-right">
-          © 2020 CheapCARS.ng™. All Rights Reserved.{" "}
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

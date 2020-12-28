@@ -1,0 +1,94 @@
+.search-box {
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: start;
+  color: white;
+  display: flex;
+  background-color: var(--color-primary-dark);
+  padding: 0.5rem;
+  & button {
+    width: 100%;
+  }
+  &--ads {
+    & .scrollable-dropdown__display {
+      color: rgb(83, 81, 81);
+    }
+
+    & button {
+      width: 100%;
+    }
+  }
+
+  @include respond(smaller) {
+    flex-direction: column;
+    min-width: 90%;
+  }
+  @include respond(smaller) {
+    width: 95%;
+  }
+  @include respond(smallest) {
+    width: 98%;
+    // padding: 2rem 0.5rem;
+  }
+  &__box {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    @include respond(smaller) {
+      margin-bottom: 0.5rem;
+      padding-left: 1rem;
+    }
+    &:first-child {
+      padding-left: 1rem;
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+    }
+    &__input {
+      height: 4.5rem;
+      width: 35rem;
+      min-width: 90%;
+      border: none;
+      padding: 0;
+      font-size: 1.75rem;
+      padding-left: 1rem;
+      color: rgb(83, 81, 81);
+
+      &--ads {
+        width: 25rem;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    &__button {
+      background-color: var(--color-danger);
+      margin: 0;
+      font-size: 1.7rem;
+      padding: 0 2rem;
+      font-weight: 700;
+      color: white;
+      transition: all 0.3s;
+      border: none;
+      width: 17rem;
+
+      @include respond(smaller) {
+        height: 5rem;
+      }
+
+      &:hover {
+        background-color: var(--color-primary-dark);
+      }
+
+      & i {
+        margin-right: 1rem;
+      }
+    }
+
+    &__icon {
+      color: rgb(141, 135, 135);
+      font-size: 3rem;
+    }
+  }
+}

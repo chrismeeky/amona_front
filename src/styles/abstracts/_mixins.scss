@@ -1,4 +1,10 @@
-@mixin absCenter {
+@mixin hover {
+  color: var(--color-primary-dark);
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover {
+    color: var(--color-primary);
+  }
 }
 
 @mixin sectionTop {
@@ -69,6 +75,18 @@
   @if $breakpoint == large {
     @media (max-width: 90.625em) {
       // 1450px
+      @content;
+    }
+  }
+  @if $breakpoint == mini-large {
+    @media (max-width: 87.5em) {
+      // 1400px
+      @content;
+    }
+  }
+  @if $breakpoint == micro-large {
+    @media (max-width: 76.375em) {
+      // 1222px
       @content;
     }
   }
