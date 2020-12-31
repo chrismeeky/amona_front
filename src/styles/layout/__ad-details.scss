@@ -1,8 +1,9 @@
 .ad-details {
   &__navigation {
-    width: 70%;
-    justify-self: center;
-    margin-top: 10rem;
+    grid-column: 3 / 11;
+    grid-row: 2 / 3;
+    padding: 2rem 0;
+    margin-top: 2rem;
     display: flex;
     justify-content: space-between;
     font-size: 13px;
@@ -31,6 +32,16 @@
     display: grid;
     grid-template-columns: 1fr 27rem;
     grid-column-gap: 2rem;
+
+    @include respond(mini-large) {
+      width: 80%;
+    }
+    @include respond(micro-large) {
+      width: 90%;
+    }
+    @include respond(medium) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__wrapper {
@@ -40,7 +51,20 @@
     display: grid;
     padding: 2rem;
     border: 1px solid #e2e2e2;
-
+    grid-column: 3 / 9;
+    grid-row: 3 / 4;
+    @include respond(mini-large) {
+      grid-column: 2 / 10;
+    }
+    @include respond(mini-medium) {
+      grid-column: 2 / 12;
+    }
+    @include respond(smallest) {
+      grid-column: 1 / 13;
+      width: 98%;
+      justify-self: center;
+      padding: 1rem;
+    }
     &__title {
       display: flex;
       align-items: center;
@@ -57,6 +81,10 @@
         font-size: 3rem;
         color: #ffc107;
         margin-left: 1rem;
+
+        @include respond(smallest) {
+          display: none;
+        }
       }
       & span {
         font-size: 1.3rem;
@@ -85,10 +113,12 @@
         align-items: center;
       }
       & span {
-        font-size: 1.5rem;
+        font-size: 15px;
         margin-left: 1rem;
         margin-top: 0.2rem;
       }
+
+
     }
 
     &__details {
@@ -104,6 +134,10 @@
           justify-content: space-between;
           border-bottom: 1px solid var(--color-border);
           padding-bottom: 2rem;
+
+          @include respond (smallest) {
+            flex-direction: column;
+          }
           & i {
             font-size: 2.5rem;
             color: var(--color-headings);
@@ -116,6 +150,9 @@
           }
           span {
             font-size: 1.7rem;
+            @include respond (smallest) {
+              margin-left: auto;
+            }
           }
           &__location span {
             @include hover;
@@ -124,6 +161,10 @@
           &__price {
             display: flex;
             align-items: center;
+            @include respond (smallest) {
+              margin-bottom: 1rem;
+            }
+            
 
             & span {
               color: black;
@@ -167,13 +208,15 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
             grid-gap: 1rem;
-
+            @include respond(smallest) {
+              grid-template-columns: 1fr;
+            }
             &__detail {
               display: flex;
               justify-content: space-between;
               padding: 1rem 0.7rem;
               background-color: #f5f5f5;
-              font-size: 1.2rem;
+              font-size: 12px;
               color: black;
               border-radius: 0.4rem;
 
@@ -192,17 +235,19 @@
           &__title {
             font-weight: bold;
             color: var(--color-headings);
-            font-size: 1.2rem;
+            font-size: 12px;
           }
 
           &__container {
             margin-top: 2rem;
-            font-size: 1.2rem;
+            font-size: 12px;
             color: var(--color-headings);
 
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
-
+            @include respond(smallest) {
+              grid-template-columns: 1fr 1fr;
+            }
             & div {
               padding: 0.3rem 0;
 
@@ -326,12 +371,20 @@
             display: flex;
             margin-top: 2rem;
 
+            @include respond(smallest) {
+              flex-direction: column;
+            }
             & input {
               font-size: 1.6rem;
               padding: 0.8rem;
               border: 1px solid var(--color-border);
               margin-right: 0.8rem;
               border-radius: 0.3rem;
+              @include respond(smallest) {
+                margin-right: 0;
+                margin-bottom: .8rem;
+                font-size: 16px;
+              }
               &:focus {
                 outline: none;
                 border-color: #9ecaed;
@@ -350,7 +403,7 @@
               transition: all 0.3s;
 
               &:hover {
-                background-color: rgba(#EA280A,.8);
+                background-color: rgba(#ea280a, 0.8);
               }
             }
           }
@@ -378,12 +431,31 @@
   }
   &__sidebar {
     // border: 1px solid var(--color-border);
-
+    grid-column: 9 / 11;
+    grid-row: 3 / 4;
+    @include respond(mini-large) {
+      grid-column: 10 / 12;
+    }
+    @include respond(mini-medium) {
+      grid-column: 2 / 12;
+      grid-row: 4 / 5;
+      margin-top: 2rem;
+    }
+    @include respond(smallest) {
+      grid-column: 1 / 13;
+      width: 98%;
+      justify-self: center;
+    }
     &__owner {
       display: flex;
       align-items: center;
       padding: 1.5rem 1.5rem 1rem 1.5rem;
       border: 1px solid var(--color-border);
+
+      &__rating {
+        display: flex;
+        align-items: center;
+      }
       &__picture {
         font-size: 5rem;
         color: #b2b2b2;
@@ -396,7 +468,7 @@
         justify-items: center;
         & span {
           font-size: 1.2rem;
-          margin-bottom: 0.5rem;
+          margin-left: 0.5rem;
         }
         & h3 {
           color: var(--color-primary-dark);
@@ -486,7 +558,7 @@
         border-bottom: 1px solid var(--color-border);
 
         & h3 {
-          font-size: 1.5rem;
+          font-size: 15px;
           color: black;
         }
       }
@@ -498,7 +570,7 @@
 
           & li {
             padding: 0.5rem;
-            font-size: 1.15rem;
+            font-size: 11.5px;
             color: var(--color-headings);
             display: flex;
             & span {
@@ -560,7 +632,20 @@
   &__recommended {
     margin-top: 4rem;
     margin-bottom: 8rem;
+    grid-column: 3 / 9;
+    @include respond(mini-large) {
+      grid-column: 2 / 10;
+    }
 
+    @include respond(mini-medium) {
+      grid-column: 2 / 12;
+      grid-row: 5 / 6;
+    }
+    @include respond(smallest) {
+      grid-column: 1 / 13;
+      width: 98%;
+      justify-self: center;
+    }
     &__title {
       display: grid;
       margin-bottom: 2rem;

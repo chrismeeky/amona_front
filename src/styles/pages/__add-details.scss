@@ -1,10 +1,21 @@
 .ad-details {
   display: grid;
   background-color: #fff;
-  grid-template-rows: 9rem auto auto;
+  grid-template-columns: repeat(9, 1fr) minmax(17rem, 1fr) repeat(2, 1fr);
+  grid-template-rows: 9rem repeat(auto-fit, minmax(min-content, 1fr));
+  grid-column-gap: 1.5rem;
 
+  @include respond(medium) {
+    grid-template-columns: repeat(9, 1fr) minmax(20rem, 1fr) repeat(2, 1fr);
+
+  }
+
+  @include respond(mini-medium) {
+    // grid-template-columns: 1fr;
+  }
   & .header {
     background-color: #f8f9fa;
     border-bottom: 1px solid rgb(238, 233, 233);
+    height: 9rem !important;
   }
 }

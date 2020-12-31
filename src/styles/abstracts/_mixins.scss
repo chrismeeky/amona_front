@@ -96,6 +96,12 @@
       @content;
     }
   }
+  @if $breakpoint == mini-medium {
+    @media (max-width: 68.75em) {
+      // 1100px
+      @content;
+    }
+  }
   @if $breakpoint == small {
     @media (max-width: 56.25em) {
       // 900px
