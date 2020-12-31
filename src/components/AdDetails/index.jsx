@@ -1,13 +1,17 @@
+import React, { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import Header from "../Commons/header";
 import Footer from "../Commons/footer";
-import React from "react";
 import StarRatings from "react-star-ratings";
 import ImageCarousel from "../Commons/image-carousel";
 import { recommendedPosts } from "../../constants/latest-posts";
 import Post from "../Commons/post";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+
 const AdDetails = () => {
+  const [isLoggedIn] = useState(false);
+
   return (
     <div className="ad-details">
       <Header />
@@ -252,7 +256,54 @@ const AdDetails = () => {
                   </div>
                 </TabPanel>
                 <TabPanel>
-                  <h2>Any content 2</h2>
+                  <div className="ad-details__main__details__review">
+                    {isLoggedIn ? (
+                      <>
+                        <form className="ad-details__main__details__review__form">
+                          <textarea
+                            className="ad-details__main__details__review__textarea"
+                            name=""
+                            id=""
+                            cols="30"
+                            rows="10"
+                          ></textarea>
+                          <div className="ad-details__main__details__review__button">
+                            <StarRatings
+                              rating={4.5}
+                              starDimension="1.5rem"
+                              starSpacing=".3rem"
+                              starRatedColor="gold"
+                            />
+                            <button>Leave a Review</button>
+                          </div>
+                        </form>
+                        <div className="ad-details__main__details__review__bottom-text">
+                          This ad has no reviews yet. Be the first to leave a
+                          review.
+                        </div>
+                      </>
+                    ) : (
+                      <form className="ad-details__main__details__review__login">
+                        <div className="ad-details__main__details__review__login__intro">
+                          <span>Note:</span>{" "}
+                          <span>You must be logged in to post a review. </span>
+                        </div>
+                        <div className="ad-details__main__details__review__login__inputs">
+                          <input type="email" placeholder="Email or Phone" />
+                          <input type="password" placeholder="password" />
+                          <button>Login</button>
+                        </div>
+
+                        <div className="ad-details__main__details__review__login__captcha">
+                          <ReCAPTCHA
+                            sitekey="6LdEVBsaAAAAAHx5BRsT0nG5Pm5kBFXGKYxq5ULu"
+                            onChange={(value) => {}}
+                          />
+                          ,
+                        </div>
+                      </form>
+                    )}
+                  </div>
                 </TabPanel>
               </Tabs>
             </div>
