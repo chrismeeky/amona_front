@@ -294,7 +294,7 @@ const AdDetails = () => {
                         sitekey="6LdEVBsaAAAAAHx5BRsT0nG5Pm5kBFXGKYxq5ULu"
                         onChange={(value) => {}}
                       />
-                      ,
+                      
                     </div>
                   </form>
                 )}

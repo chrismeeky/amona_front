@@ -11,11 +11,13 @@
 @import "styles/components/_search-box";
 @import "styles/components/_scrollable-dropdown";
 @import "styles/components/_image-carousel";
+@import "styles/components/_input-group";
+
 
 @import "styles/pages/_home";
 @import "styles/pages/_all-ads";
 @import "styles/pages/_add-details";
-
+@import "styles/pages/_registration";
 
 @import "styles/layout/_header";
 @import "styles/layout/_wide-intro";
@@ -28,4 +30,5 @@
 @import "styles/layout/_categories-list";
 @import "styles/layout/_all-ads-posts";
 @import "styles/layout/_ad-details";
+@import "styles/layout/_register";
 

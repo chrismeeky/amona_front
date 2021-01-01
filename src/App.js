@@ -3,6 +3,7 @@ import { Route, Switch, BrowserRouter } from "react-router-dom";
 import Home from "./components/Home/index";
 import AllAds from "./components/AllAds/index";
 import AddDetails from "./components/AdDetails/index";
+import Registration from "./components/Authentication/Registration/index";
 function App() {
   return (
     <Fragment>
@@ -15,6 +16,13 @@ function App() {
         </Switch>
         <Switch>
           <Route exact path="/ads/details" component={AddDetails}></Route>
+        </Switch>
+        <Switch>
+          <Route
+            exact
+            path="/registration"
+            component={Registration}
+          ></Route>
         </Switch>
       </BrowserRouter>
     </Fragment>

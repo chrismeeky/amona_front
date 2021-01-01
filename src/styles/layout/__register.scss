@@ -1,0 +1,113 @@
+.register {
+  &__container {
+    padding-top: 3rem;
+    background-color: #fff;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr) minmax(13%, 1fr) repeat(2, 1fr);
+    padding-bottom: 4rem;
+    grid-column-gap: 40px;
+    @include respond(small) {
+      padding: 3rem 1rem;
+    }
+    @include respond(smaller) {
+      grid-template-columns: repeat(12, 1fr);
+      display: block;
+    }
+  }
+
+  &__main {
+    grid-column: 3 / 9;
+    background-color: #f5f5f5;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+
+    @include respond(mini-medium) {
+      grid-column: 2 / 9;
+    }
+    @include respond(small) {
+      grid-column: 1 / 9;
+    }
+    @include respond(smaller) {
+      grid-column: 1 / -1;
+    }
+    &__heading {
+      display: flex;
+      align-items: center;
+      padding: 2rem;
+      color: var(--color-headings);
+      border-bottom: 1px solid var(--color-border);
+      & h1 {
+        font-size: 2.2rem;
+        text-align: center;
+
+        @include respond(tiny) {
+            font-size: 2rem;
+        }
+      }
+      & i {
+        font-size: 3rem;
+        margin-right: 1rem;
+      }
+    }
+
+    &__captcha {
+      justify-self: end;
+      margin-top: 2rem;
+      width: 27.7rem !important;
+    }
+  }
+
+  &__sidebar {
+    grid-column: 9 / 11;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include respond(mini-medium) {
+      grid-column: 9 / 12;
+    }
+    @include respond(small) {
+      grid-column: 9 / 13;
+    }
+    @include respond(smaller) {
+      grid-column: 1 / -1;
+      margin-top: 3rem;
+    }
+    &__info {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 5rem;
+      @include respond(smaller) {
+        width: 90%;
+      }
+      & i {
+        font-size: 4.5rem;
+      }
+
+      &:first-child {
+        color: #ff9113;
+      }
+      &:nth-child(2) {
+        color: #e6c840;
+      }
+      &:last-child {
+        color: #74c29b;
+      }
+      & h2 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        color: var(--color-headings);
+        text-align: center;
+      }
+
+      & p {
+        text-align: center;
+        color: var(--color-headings);
+        font-size: 12px;
+      }
+    }
+  }
+}

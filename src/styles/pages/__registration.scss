@@ -1,0 +1,5 @@
+.register {
+  display: grid;
+  grid-template-columns: repeat((12, 1fr));
+  grid-template-rows: 9rem repeat(auto-fit, minmax(9rem, min-content));
+}
