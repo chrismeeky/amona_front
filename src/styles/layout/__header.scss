@@ -41,7 +41,8 @@
 
     &__item {
       font-size: 1.4rem;
-
+      color: var(--color-headings);
+      cursor: pointer;
       &:first-child {
         margin-right: 2rem;
       }

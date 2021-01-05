@@ -8,15 +8,15 @@
 html {
   // defines what 1rem is
   font-size: 62.5%; // 1rem = 10px
-
-  @include respond (medium) {
+  height: 100%;
+  @include respond(medium) {
     font-size: 50%;
   }
 }
 body {
   box-sizing: border-box;
   background-color: hsl(225, 22%, 96%);
-  height: 100vh;
+  height: 100%;
   background-attachment: fixed;
   background-image: url(../../assets//img/backgroundimage.png);
   // background-size: cover;

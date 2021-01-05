@@ -101,7 +101,7 @@ const Registration = () => {
               </div>
             </div> */}
 
-            <div className="form__captcha">
+            <div className="form__captcha ">
               <ReCAPTCHA
                 sitekey="6LdEVBsaAAAAAHx5BRsT0nG5Pm5kBFXGKYxq5ULu"
                 onChange={(value) => {}}

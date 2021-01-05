@@ -1,0 +1,53 @@
+//Justify
+.j-s-start {
+  justify-self: start;
+}
+.j-s-center {
+  justify-self: center;
+}
+.j-i-start {
+  justify-items: start !important;
+}
+
+.padding-none {
+  padding: none;
+}
+.p-end-1 {
+  padding: 0 1rem !important;
+}
+.p-end-2 {
+  padding: 0 2rem;
+}
+.p-end-3 {
+  padding: 0 3rem;
+}
+
+// Margins
+
+.m-auto {
+  margin: auto !important;
+}
+.m-0 {
+  margin: 0;
+}
+
+.m-t-1 {
+  margin-top: 1rem !important;
+}
+.m-t-2 {
+  margin-top: 2rem !important;
+}
+
+
+.formGroup--login {
+  grid-template-columns: 1fr !important;
+
+  & label {
+    margin-bottom: 1.5rem;
+    font-size: 15px !important;
+  }
+
+  & input {
+    font-size: 16px !important;
+  }
+}
